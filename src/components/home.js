@@ -5,15 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { PageContext } from "../context";
 
 function Home() {
-
-  const { collection,setCollection } = React.useContext(PageContext);
+  const { collection, setCollection } = React.useContext(PageContext);
   const history = useNavigate();
 
-
-
   const handleDelete = (id) => {
-
-    setCollection(prev =>  prev.filter(obj=>obj.id!==id));
+    setCollection((prev) => prev.filter((obj) => obj.id !== id));
 
     history("/");
   };
@@ -30,18 +26,16 @@ function Home() {
         </thead>
         <tbody>
           {collection.map((data) => {
-            
             return (
               <tr key={data.id}>
                 <td>{data.name}</td>
                 <td>{data.degree}</td>
                 <td>
                   <Link to={`/edit/${data.id}`}>
-
-                    <Button onClick={() => (data.id)}>Edit</Button>
+                    <Button onClick={() => data.id}>Edit</Button>
                   </Link>
                   &nbsp;
-                  <Button onClick={handleDelete}>Delete</Button>
+                  <Button onClick={() => handleDelete(data.id)}>Delete</Button>
                 </td>
               </tr>
             );

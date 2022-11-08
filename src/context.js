@@ -11,7 +11,6 @@ export const PageContext = React.createContext({
 
 export const ProviderAPI = (props) => {
 
-    console.log(Collection)
 
     const [collection,setCollection] = useState(Collection)
 
