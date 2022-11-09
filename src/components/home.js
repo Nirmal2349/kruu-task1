@@ -20,8 +20,10 @@ function Home() {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Degree</th>
-            <th>tool</th>
+            <th>Age</th>
+            <th>Education</th>
+            <th>Mobile</th>
+            <th>Actons</th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +31,9 @@ function Home() {
             return (
               <tr key={data.id}>
                 <td>{data.name}</td>
-                <td>{data.degree}</td>
+                <td>{data.age}</td>
+                <td>{data.education}</td>
+                <td>{data.mobile}</td>
                 <td>
                   <Link to={`/edit/${data.id}`}>
                     <Button onClick={() => data.id}>Edit</Button>
